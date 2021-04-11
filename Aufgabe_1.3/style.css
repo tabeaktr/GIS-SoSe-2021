@@ -1,0 +1,136 @@
+body {
+    background-image: url("Hintergrund.png");
+    width: 800px;
+    text-align: center;
+    font-family: sans-serif;
+    color: burlywood;
+    margin: auto;
+}
+
+h1 {
+    font-weight: bold;
+    text-shadow: 1px 1px lightgrey;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(231, 212, 189, 0.527);
+    overflow :hidden; /* bewirkt, dass die Navigation in einer eigenen Zeile steht */
+}
+
+.sticky a {
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    padding: 14px;
+    color: burlywood;
+    text-decoration: none;
+}
+
+.sticky a:hover {
+    font-size: 18px;
+}
+
+a {
+    color: burlywood;
+    text-decoration: underline burlywood;
+}
+
+.AktuelleSeite {
+    font-weight: bold;
+}
+
+.me {
+    background:none;
+    color: burlywood;
+    width: 520px;
+    padding: 15px 10px 25px 10px;
+    border: 3px solid burlywood;
+    margin:auto;
+}
+
+h3 {
+    font-weight: bold;
+    text-shadow: 1px 1px lightgrey;
+    text-align: left;
+}
+
+table, tr, th, td {
+    border: none;
+    background-image: url("Hintergrund.png");
+    color: burlywood;
+    width: 350px;
+    padding: 1px;
+    margin: auto;
+}
+
+#mail a {
+    color: burlywood;
+    text-decoration: underline burlywood;
+}
+
+#gif, #foto, #video {
+    font-size: 25px;
+    text-shadow: 1px 1px lightgrey;
+}
+
+#bottom a {
+    color: burlywood;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#formular {
+    background: rgba(231, 212, 189, 0.527);
+    padding: 5px;
+    width: 300px;
+    text-align:left;
+}
+
+#formular2 {
+    background: rgba(231, 212, 189, 0.527);
+    padding: 5px;
+    width: 300px;
+    text-align:left;
+}
+
+#formular3 {
+    background: rgba(231, 212, 189, 0.527);
+    padding: 5px;
+    width: 300px;
+    text-align:left;
+}
+
+#formular_n {
+    background: rgba(231, 212, 189, 0.527);
+    padding: 5px;
+    width: 400px;
+    text-align:left;
+}
+
+button {
+    color: burlywood;
+    font-size: 15px;
+    background: rgba(231, 212, 189, 0.527);
+    padding: 6px;
+    border: none;
+    box-shadow: 1px 1px lightgrey;
+    margin-right: 750px;
+}
+
+#datenschutz {
+    font-size: 13px;
+    color: rgba(231, 212, 189, 0.918);
+    text-align:left;
+}
+
+.icon { 
+    width: 30px;
+    margin: auto;
+}
+.icon:hover{
+    width: 32px;
+}
