@@ -1,0 +1,320 @@
+@media screen and (max-width: 1024px) {      /* DESKTOP*/
+
+body {
+    background-image: url("Hintergrund.png");
+    text-align: center;
+    font-family: sans-serif;
+    color: burlywood;
+    margin: auto;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 1px 1px lightgrey;
+}
+
+#sticky {
+    position: sticky;
+    top: 0;
+    right: 0;
+    background: rgba(231, 212, 189, 0.527);
+    overflow: hidden;
+}
+
+#sticky a {
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    padding: 14px;
+    color: burlywood;
+    text-decoration: none;
+}
+
+#sticky a:hover {
+    font-size: 18px;
+}
+
+a {
+    color: burlywood;
+    text-decoration: underline burlywood;
+}
+
+.AktuelleSeite {
+    font-weight: bold;
+}
+
+.me {
+    background:none;
+    color: burlywood;
+    width: 65%;
+    max-width: 600px;
+    padding: 15px 10px 25px 10px;
+    border: 3px solid burlywood;
+    margin:auto;
+}
+
+h3 {
+    font-weight: bold;
+    text-shadow: 1px 1px lightgrey;
+    text-align: left;
+}
+
+table, tr, th, td {
+    border: none;
+    background-image: url("Hintergrund.png");
+    color: burlywood;
+    width: 40%;
+    padding: 1px;
+    margin: auto;
+}
+
+#mail a {
+    color: burlywood;
+    text-decoration: underline burlywood;
+}
+
+#gif, #foto, #video {
+    font-size: 25px;
+    text-shadow: 1px 1px lightgrey;
+}
+
+#bottom a {
+    color: burlywood;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#smen {
+    font-weight: bold;
+    text-shadow: 1px 1px lightgrey;
+    text-align: left;
+    margin-left: 15%;
+}
+
+#formular {
+    background: rgba(231, 212, 189, 0.527);
+    padding: 5px;
+    width: 300px;
+    text-align:left;
+    margin-left: 15%;
+}
+
+#formular2 {
+    background: rgba(231, 212, 189, 0.527);
+    padding: 5px;
+    width: 300px;
+    text-align:left;
+    margin-left: 15%;
+}
+
+#formular3 {
+    background: rgba(231, 212, 189, 0.527);
+    padding: 5px;
+    width: 300px;
+    text-align:left;
+    margin-left: 15%;
+}
+
+#formular_n {
+    background: rgba(231, 212, 189, 0.527);
+    padding: 5px;
+    width: 400px;
+    text-align:left;
+    margin-left: 15%;
+}
+
+#abs {
+    color: burlywood;
+    font-size: 15px;
+    background: rgba(231, 212, 189, 0.527);
+    width: 100px;
+    padding: 6px;
+    border: none;
+    box-shadow: 1px 1px lightgrey;
+    margin-left: 15%;
+}
+
+#datenschutz {
+    font-size: 13px;
+    color: rgba(231, 212, 189, 0.918);
+    text-align:left;
+    margin-left: 15%;
+}
+
+.icon { 
+    width: 30px;
+    margin: auto;
+}
+.icon:hover{
+    width: 32px;
+}
+
+}       /* Abschluss CSS-Design für Desktop-Ansicht*/
+
+
+/*RESPONSIVE DESIGN LAYOUT*/
+@media screen and (max-width: 600px) {      /* HANDY*/
+    body {
+        font-size: 12px;
+        background-image: url("Hintergrund.png");
+        text-align: center;
+        font-family: sans-serif;
+        color: burlywood;
+        margin: auto;
+    }
+    
+    h1 {
+        font-size: 25px;
+        font-weight: bold;
+        text-shadow: 1px 1px lightgrey;
+    }
+    
+    #sticky {
+        font-size: 15px;
+        position: sticky;
+        top: 0;
+        margin: auto;
+        background: rgba(231, 212, 189, 0.527);
+        overflow: hidden;
+    }
+    
+    #sticky a {
+        float: center;
+        text-align: center;
+        text-decoration: none;
+        margin: auto;
+        padding: 10px;
+        color: burlywood;
+        text-decoration: none;
+    }
+    
+    #sticky a:hover {
+        font-size: 16px;
+    }
+    
+    a {
+        color: burlywood;
+        text-decoration: underline burlywood;
+    }
+    
+    .AktuelleSeite {
+        font-weight: bold;
+    }
+
+    .me {
+        font-size: 11px;
+        background:none;
+        color: burlywood;
+        width: 70%;
+        padding: 10px 5px 20px 5px;
+        border: 1px solid burlywood;
+        margin:auto;
+    }
+    
+    h2 {
+        font-size: 18px;
+        font-weight: bold;
+        text-shadow: 1px 1px lightgrey;
+    }
+
+    h3 {
+        font-size: 15px;
+        font-weight: bold;
+        text-shadow: 1px 1px lightgrey;
+        text-align: left;
+    }
+    
+    table, tr, th, td {
+        font-size: 12px;
+        border: none;
+        background-image: url("Hintergrund.png");
+        color: burlywood;
+        width: 40%;
+        padding: 1px;
+        margin: auto;
+    }
+    
+    #mail a {
+        color: burlywood;
+        text-decoration: underline burlywood;
+    }
+    
+    #gif, #foto, #video {
+        font-size: 20px;
+        text-shadow: 1px 1px lightgrey;
+    }
+    
+    #bottom a {
+        color: burlywood;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    
+    #smen {
+        font-weight: bold;
+        text-shadow: 1px 1px lightgrey;
+        text-align: left;
+        margin-left: 15%;
+    }
+    
+    #formular {
+        background: rgba(231, 212, 189, 0.527);
+        padding: 5px;
+        width: 200px;
+        text-align:left;
+        margin-left: 15%;
+    }
+    
+    #formular2 {
+        background: rgba(231, 212, 189, 0.527);
+        padding: 5px;
+        width: 200px;
+        text-align:left;
+        margin-left: 15%;
+    }
+    
+    #formular3 {
+        background: rgba(231, 212, 189, 0.527);
+        padding: 5px;
+        width: 200px;
+        text-align:left;
+        margin-left: 15%;
+    }
+    
+    #formular_n {
+        background: rgba(231, 212, 189, 0.527);
+        padding: 5px;
+        width: 300px;
+        text-align:left;
+        margin-left: 15%;
+    }
+    
+    #abs {
+        color: burlywood;
+        font-size: 12px;
+        background: rgba(231, 212, 189, 0.527);
+        width: 60px;
+        padding: 6px;
+        border: none;
+        box-shadow: 1px 1px lightgrey;
+        margin-left: 15%;
+    }
+    
+    #datenschutz {
+        font-size: 11px;
+        color: rgba(231, 212, 189, 0.918);
+        text-align:left;
+        margin-left: 15%;
+    }
+    
+    .icon { 
+        width: 13px;
+        margin: auto;
+    }
+    .icon:hover{
+        width: 14px;
+    }
+    
+    }       /* Abschluss CSS-Design für Handy-Ansicht*/
