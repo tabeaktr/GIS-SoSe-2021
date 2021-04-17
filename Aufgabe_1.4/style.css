@@ -1,4 +1,4 @@
-@media screen and (max-width: 1024px) {      /* DESKTOP*/
+@media screen and (min-width: 601px) {      /* DESKTOP*/
 
 body {
     background-image: url("Hintergrund.png");
@@ -22,7 +22,7 @@ h1 {
     overflow: hidden;
 }
 
-#sticky a {
+#sticky a {              
     float: right;
     text-align: center;
     text-decoration: none;
@@ -34,6 +34,7 @@ h1 {
 
 #sticky a:hover {
     font-size: 18px;
+    background-image: url("Hintergrund.png");
 }
 
 a {
@@ -45,13 +46,40 @@ a {
     font-weight: bold;
 }
 
+div p {
+    font-weight: bold;
+}
+
+@keyframes example {
+    0% {color: green;}
+    20% {color: blue;}
+    40% {color: purple;}
+    60% {color: rgb(224, 6, 188);}
+    80% {color: red;}
+    100% {color: yellow;}
+} 
+
+#address {
+    animation-duration: 10s;
+    animation-name: example;
+}
+
+p::first-letter {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+li:nth-child(2n) {
+    font-weight: bold;
+}
+
 .me {
     background:none;
     color: burlywood;
     width: 65%;
     max-width: 600px;
     padding: 15px 10px 25px 10px;
-    border: 3px solid burlywood;
+    border: 2px solid burlywood;
     margin:auto;
 }
 
@@ -147,7 +175,7 @@ table, tr, th, td {
     width: 30px;
     margin: auto;
 }
-.icon:hover{
+.icon:hover {
     width: 32px;
 }
 
@@ -181,7 +209,7 @@ table, tr, th, td {
     }
     
     #sticky a {
-        float: center;
+        float: right;
         text-align: center;
         text-decoration: none;
         margin: auto;
@@ -192,6 +220,7 @@ table, tr, th, td {
     
     #sticky a:hover {
         font-size: 16px;
+        background-image: url("Hintergrund.png");
     }
     
     a {
@@ -200,6 +229,37 @@ table, tr, th, td {
     }
     
     .AktuelleSeite {
+        font-weight: bold;
+    }
+
+    img[alt=Königssee_Bayern] {
+        width: 70%;
+    }
+    
+    div p {
+        font-weight: bold;
+    }
+
+    @keyframes example {
+        0% {color: green;}
+        20% {color: blue;}
+        40% {color: purple;}
+        60% {color: rgb(224, 6, 188);}
+        80% {color: red;}
+        100% {color: yellow;}
+    } 
+    
+    #address {
+        animation-duration: 10s;
+        animation-name: example;
+    }
+
+    p::first-letter {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    li:nth-child(2n) {
         font-weight: bold;
     }
 
