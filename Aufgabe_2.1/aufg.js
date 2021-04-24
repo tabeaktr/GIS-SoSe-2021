@@ -23,6 +23,22 @@ function bye() {
 //Dann springt er wieder hoch in die console.log (Zeile 6) und gibt "in Kambodscha?" aus.
 //Durch die Zeile 9 werden die Funktionen erst ausgeführt.
 //c
+let u = "Alles";
+function b1() {
+    b2();
+    b3();
+    b4();
+}
+function b2() {
+    console.log(u + " Gute!");
+}
+function b3() {
+    console.log(u + " Klar?");
+}
+function b4() {
+    console.log(u + " Logo!");
+}
+b1();
 // AUFGABE 2
 function schnippi() {
     let i = 9;
@@ -139,9 +155,6 @@ factorial(4);
 //f
 function leapyears() {
     for (let i = 1900; i < 2021; i++) {
-        /*if (((i / 4) % 0) && !((i / 100) % 0) ) {
-            console.log(i);
-        }*/
         if (i % 4 == 0) {
             if (!(i % 100 == 0)) {
                 console.log(i);
@@ -155,5 +168,71 @@ function leapyears() {
 leapyears();
 // AUFGABE 6
 //a
-let hash = "#";
+function hashtag() {
+    let hash = "#";
+    for (let i = 0; i < 7; i++) {
+        console.log(hash);
+        hash += "#";
+    }
+}
+hashtag();
+//b
+function fizzbuzz() {
+    for (let i = 1; i < 101; i++) {
+        if (i % 3 == 0) {
+            let f = "Fizz";
+            console.log(f);
+        }
+        else if (!(i % 3 == 0) && i % 5 == 0) {
+            let b = "Buzz";
+            console.log(b);
+        }
+        else {
+            console.log(i);
+        }
+    }
+}
+fizzbuzz();
+//c
+function fizzbuzz2() {
+    for (let i = 1; i < 101; i++) {
+        if (i % 15 == 0) {
+            let fb = "FizzBuzz";
+            console.log(fb);
+        }
+        else if (i % 3 == 0) {
+            let f = "Fizz";
+            console.log(f);
+        }
+        else if (!(i % 3 == 0) && i % 5 == 0) {
+            let b = "Buzz";
+            console.log(b);
+        }
+        else {
+            console.log(i);
+        }
+    }
+}
+fizzbuzz2();
+//Lösung 1: Gemeinsamer Nenner 15
+//Lösung 2: Verschachtelte if-Funktionen
+//d
+function schach(b, h) {
+    let z = "";
+    for (let s = 0; s < h; s++) { //Höhe
+        if (s % 2 == 0) //für das Muster verantwortlich, dass jede 2. Zeile eine Leerzeile an den Anfang bekommt
+            z += " ";
+        for (let i = 0; i < b; i++) { //Breite
+            if (i % 2 == 0) {
+                z += "#";
+            }
+            else {
+                z += " ";
+            }
+        }
+        z += "\n";
+    }
+    console.log(z);
+}
+schach(8, 8); // <- e 
 //# sourceMappingURL=aufg.js.map

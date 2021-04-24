@@ -28,9 +28,24 @@ function bye(): void {
 //Durch die Zeile 9 werden die Funktionen erst ausgeführt.
 
 //c
+let u: string = "Alles";
 
+function b1(): void {
+    b2();
+    b3();
+    b4();
+}
+function b2(): void {
+    console.log(u + " Gute!");
+}
+function b3(): void {
+    console.log(u + " Klar?");
+}
+function b4(): void {
+    console.log(u + " Logo!");
+}
 
-
+b1();
 
 
 // AUFGABE 2
@@ -40,7 +55,7 @@ function schnippi(): void {
     do {
         console.log(i);
         i = i - 1;
-    } while ( i > 0);
+    } while (i > 0);
 }
 
 schnippi();
@@ -68,7 +83,7 @@ function schnippi2(): void {
     do {
         console.log(i);
         i = i - 1;
-    } while ( i > 0);
+    } while (i > 0);
 }
 
 schnippi2();
@@ -126,13 +141,13 @@ multiply(22, 64);
 
 //b
 function max(t: number, u: number): void {                  // : number {  wäre auch möglich, dann aber mit return
-if (t > u) {
-    console.log(t);
-} else if (t < u) {
-    console.log(u);
-} else {
-    console.log("Beide Zahlen sind gleich groß");
-}
+    if (t > u) {
+        console.log(t);
+    } else if (t < u) {
+        console.log(u);
+    } else {
+        console.log("Beide Zahlen sind gleich groß");
+    }
 }
 
 max(7, 95);
@@ -146,8 +161,8 @@ function count(): void {
         l = l + m;
         console.log(l);       //Zwischensumme
         m = m + 1;
-    } while (m <= 100); 
-    }
+    } while (m <= 100);
+}
 
 count();
 
@@ -156,19 +171,19 @@ function RandomNumber(min: number, max: number): void {
     for (let i = 0; i < 10; i++) {
         console.log(Math.random() * (max - min) + min);
     }
-  }
+}
 
 RandomNumber(0, 100);
 
 //e
 function factorial(n: number): number {
     var result = n;
-    if (n <= 1) 
-      return 1; 
-    while (n > 1) { 
-      n--;
-      result = result * n;
-      console.log(result);
+    if (n <= 1)
+        return 1;
+    while (n > 1) {
+        n--;
+        result = result * n;
+        console.log(result);
     }
     return result;
 }
@@ -178,20 +193,84 @@ factorial(4);
 //f
 function leapyears(): void {
     for (let i = 1900; i < 2021; i++) {
-        /*if (((i / 4) % 0) && !((i / 100) % 0) ) {
-            console.log(i);
-        }*/
-    if (i % 4 == 0) {
-        if (!(i % 100 == 0)) {
-            console.log(i);
-        } else if (i % 400 == 0) {
-        console.log(i);
-    } 
+
+        if (i % 4 == 0) {
+            if (!(i % 100 == 0)) {
+                console.log(i);
+            } else if (i % 400 == 0) {
+                console.log(i);
+            }
+        }
     }
- }
 }
 leapyears();
 
 // AUFGABE 6
 //a
-let hash: String = "#";
+function hashtag(): void {
+    let hash: String = "#";
+    for (let i = 0; i < 7; i++) {
+        console.log(hash);
+        hash += "#";
+    }
+}
+
+hashtag();
+
+//b
+function fizzbuzz(): void {
+    for (let i = 1; i < 101; i++) {
+        if (i % 3 == 0) {
+            let f: String = "Fizz";
+            console.log(f);
+        } else if (!(i % 3 == 0) && i % 5 == 0) {
+            let b: String = "Buzz";
+            console.log(b);
+        } else {
+            console.log(i);
+        }
+    }
+}
+fizzbuzz();
+
+//c
+function fizzbuzz2(): void {
+    for (let i = 1; i < 101; i++) {
+        if (i % 15 == 0) {
+            let fb: String = "FizzBuzz";
+            console.log(fb);
+        } else if (i % 3 == 0) {
+            let f: String = "Fizz";
+            console.log(f);
+        } else if (!(i % 3 == 0) && i % 5 == 0) {
+            let b: String = "Buzz";
+            console.log(b);
+        } else {
+            console.log(i);
+        }
+    }
+}
+fizzbuzz2();
+
+//Lösung 1: Gemeinsamer Nenner 15
+//Lösung 2: Verschachtelte if-Funktionen
+
+//d
+function schach(b: number, h: number): void {
+    let z: String = "";
+    for (let s = 0; s < h; s++) {       //Höhe
+        if (s % 2 == 0)                         //für das Muster verantwortlich, dass jede 2. Zeile eine Leerzeile an den Anfang bekommt
+            z += " ";
+        for (let i = 0; i < b; i++) {   //Breite
+            if (i % 2 == 0) {
+                z += "#";
+            } else {
+                z += " ";
+            }
+        }
+        z += "\n";
+    }
+    console.log(z);
+}
+
+schach(8, 8);                 // <- e 
