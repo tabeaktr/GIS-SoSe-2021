@@ -204,7 +204,7 @@ class Rectangle {
         this.height = Math.floor(Math.random() * 100);
     }
     drawRectangle(x, y, fill, color) {
-        let c = "#ffc3a0";
+        let c = "rgb(119,136,153)";
         context.beginPath();
         context.rect(x, y, this.width, this.height);
         if (color) {
@@ -225,8 +225,8 @@ class Rectangle {
         let y = Math.floor(Math.random() * 500);
         context.beginPath();
         context.rect(x, y, this.width, this.height);
-        context.fillStyle = "#c0c0c0";
-        context.strokeStyle = "#c0c0c0";
+        context.fillStyle = "rgb(115,115,115)";
+        context.strokeStyle = "rgb(115,115,115)";
         context.fill();
         context.stroke();
     }
@@ -241,7 +241,7 @@ r2.drawRectangle(20, 700, false);
 // d)
 const r3 = new Rectangle();
 r3.createRandomRec();
-r3.drawRectangle(450, 800, true, "#5ac18e");
+r3.drawRectangle(450, 800, true, "rgb(168,168,168)");
 // e)
 const r4 = new Rectangle();
 r4.createRandomRec();
