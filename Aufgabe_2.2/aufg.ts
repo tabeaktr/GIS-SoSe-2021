@@ -269,16 +269,16 @@ namespace Aufgabe03 {
     createRandomRechteck();
 
     //d
-    function drawRechteck(_r: Rechteck): void {   //Rechteck von Zeile 255 wird als _r eingelesen
-        context.fillStyle = _r.color;           //wird angelegt, dass das Rechteck mit seiner Farbe (Z. 265) gefüllt wird 
-        context.beginPath();                    //fängt an zu zeichnen
-        context.rect(_r.x, _r.y, _r.width, _r.height);  //nach random Werten von Zeile 265
-        context.fill();                         //Reckteck wird mit der random color von Zeile 265 gefüllt
+    function drawRechteck(_r: Rechteck): void {       //Rechteck von Zeile 255 wird als _r eingelesen
+        context.fillStyle = _r.color;                 //wird angelegt, dass das Rechteck mit seiner Farbe (Z. 265) gefüllt wird 
+        context.beginPath();                          //fängt an zu zeichnen
+        context.rect(_r.x, _r.y, _r.width, _r.height); //nach random Werten von Zeile 265
+        context.fill();                               //Reckteck wird mit der random color von Zeile 265 gefüllt
     }
 
     let recht: Rechteck[] = [];
     for (let i: number = 0; i < 3; i++) {
-        recht.push(createRandomRechteck());        // erstellt in der for-Schleife 3 random Rechtecke
+        recht.push(createRandomRechteck());           // erstellt in der for-Schleife 3 random Rechtecke
     }
 
     for (let i: number = 0; i < recht.length; i++) {  // nimmt die erstellten random Rechtecke und zeichnet sie auf den Canvas
