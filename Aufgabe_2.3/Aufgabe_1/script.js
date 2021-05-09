@@ -1,5 +1,6 @@
 "use strict";
 // AUFGABE 2.3
+// Erstellt mit Anna-Lara, Benni und Sebastiana
 var Aufgabe1;
 (function (Aufgabe1) {
     document.addEventListener("DOMContentLoaded", function () {
@@ -14,14 +15,14 @@ var Aufgabe1;
             }
             drawRandom(rec) {
                 let x = Math.floor(Math.random() * 700);
-                let y = Math.floor(Math.random() * 300 + 100);
+                let y = Math.floor(Math.random() * 200 + 100);
                 let recDiv = document.createElement("div"); // neues div 
                 recDiv.style.width = rec.width + "px"; // erstelltes div zuweisen
                 recDiv.style.height = rec.height + "px";
                 recDiv.style.top = y + "px";
                 recDiv.style.left = x + "px";
                 recDiv.style.position = "absolute";
-                recDiv.style.backgroundColor = "rgba(139, 0, 0, 0.7)";
+                recDiv.style.backgroundColor = "yellow"; // Farbe der Rechtecke
                 recContainer.appendChild(recDiv); // wird an body angehängt (hinten) | 
                 //append flexibler (appC = auf Obj/El ein von der Klammer)                                ?????????????
             }

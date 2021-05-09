@@ -33,11 +33,8 @@ var Aufgabe01;
     let student3 = { matrikelnummer: 278451, name: "Sebi", studienfach: "OMB" };
     let studentenArray = [];
     studentenArray.push(student1, student2, student3); //erstellte Daten werden in das Studenten-Array gepusht
-    function addStudent(name, matrikelnummer, studienfach) {
-        let student4 = { matrikelnummer, name, studienfach };
-        studentenArray.push(student4);
-    }
-    addStudent("Angelika", 267947, "WING");
+    let student4 = { matrikelnummer: 267049, name: "Benni", studienfach: "OMB" };
+    studentenArray.push(student4);
     function showInfo(studentenaufzählung) {
         for (let i = 0; i < studentenaufzählung.length; i++) { // Muss nur einmal aufgerufen werden und gibt dann alle Studenten in jew. Array aus 
             console.log(studentenaufzählung[i].name, studentenaufzählung[i].matrikelnummer, studentenaufzählung[i].studienfach);
@@ -58,7 +55,7 @@ var Aufgabe01;
         return false;
     }
     */
-    addStudent("Angelika", 451646, "WING");
+    //addStudent("Angelika", 451646, "WING");
     // 5.
     /* Bonus
     class Student2 {

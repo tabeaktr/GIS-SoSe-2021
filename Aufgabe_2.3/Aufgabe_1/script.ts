@@ -1,4 +1,6 @@
 // AUFGABE 2.3
+// Erstellt mit Anna-Lara, Benni und Sebastiana
+
 namespace Aufgabe1 {
     document.addEventListener("DOMContentLoaded", function (): void { // addEvLi sitzt drauf & realisiert was passiert
         
@@ -18,14 +20,14 @@ namespace Aufgabe1 {
             
             drawRandom(rec: Rectangle): void { // Übergabe einer Variablen des Datentyps Rectangle 
                 let x: number = Math.floor(Math.random() * 700);
-                let y: number = Math.floor(Math.random() * 300 + 100); 
+                let y: number = Math.floor(Math.random() * 200 + 100); 
                 let recDiv: HTMLDivElement  = document.createElement("div"); // neues div 
                 recDiv.style.width = rec.width + "px"; // erstelltes div zuweisen
                 recDiv.style.height = rec.height + "px";
                 recDiv.style.top = y + "px";
                 recDiv.style.left = x + "px";
                 recDiv.style.position = "absolute";
-                recDiv.style.backgroundColor = "rgba(139, 0, 0, 0.7)";
+                recDiv.style.backgroundColor = "yellow";  // Farbe der Rechtecke
                 recContainer.appendChild(recDiv); // wird an body angehängt (hinten) | 
                 //append flexibler (appC = auf Obj/El ein von der Klammer)                                ?????????????
             }
@@ -43,6 +45,5 @@ namespace Aufgabe1 {
 
         newRec.addEventListener("click", addNewRec); //Funktion click
         reset.addEventListener("click", clearRecContainer); 
-        
     });
 }

@@ -51,14 +51,10 @@ namespace Aufgabe01 {
 
     studentenArray.push(student1, student2, student3);      //erstellte Daten werden in das Studenten-Array gepusht
 
-    function addStudent(name: string, matrikelnummer: number, studienfach: string): void {
-        let student4: Student = { matrikelnummer, name, studienfach };
-        studentenArray.push(student4);
-    }
+    let student4: Student = { matrikelnummer: 267049, name: "Benni", studienfach: "OMB" };
 
-    addStudent("Angelika", 267947, "WING");
-
-
+    studentenArray.push(student4);
+    
     function showInfo(studentenaufzählung: Student[]): void {
         for (let i = 0; i < studentenaufzählung.length; i++) {          // Muss nur einmal aufgerufen werden und gibt dann alle Studenten in jew. Array aus 
             console.log(studentenaufzählung[i].name, studentenaufzählung[i].matrikelnummer, studentenaufzählung[i].studienfach);
@@ -82,7 +78,7 @@ namespace Aufgabe01 {
     }
     */
 
-    addStudent("Angelika", 451646, "WING");
+    //addStudent("Angelika", 451646, "WING");
 
 
     // 5.
