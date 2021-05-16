@@ -3,7 +3,7 @@
 var Aufgabe02;
 (function (Aufgabe02) {
     //const save: HTMLElement = document.getElementById("save");     -- wird erst später benötigt
-    const anzeigeflaeche = document.getElementById("anzeigeflaeche"); // in der Anzeigefläche wird folgendes ausgegeben
+    //const anzeigeflaeche: HTMLElement = document.getElementById("anzeigeflaeche");   // in der Anzeigefläche wird folgendes ausgegeben
     class Flower {
         setHead(_head) {
             this.head = _head; // _head = späterer Variablenname
@@ -19,13 +19,13 @@ var Aufgabe02;
         }
     }
     let flower = new Flower(); // neue Blume (Objekt) anlegen
-    for (let i = 0; i < kopfBilder.length; i++) {
-        const imgElem = document.createElement("img"); // wir erstellen neue Bildelemente aus zu data.js - zu jedem Bild wird ein Bildelement verlinkt und angelegt 
+    /*for (let i: number = 0; i < kopfBilder.length; i++) {
+        const imgElem: HTMLImageElement = document.createElement("img");  // wir erstellen neue Bildelemente aus zu data.js - zu jedem Bild wird ein Bildelement verlinkt und angelegt
         imgElem.src = kopfBilder[i];
         imgElem.className = "auswahlbilder";
-        imgElem.id = String(i + 1); // +1 da Array
-        anzeigeflaeche.appendChild(imgElem); // wird auf der Anzeigefläche ausgegeben
-    }
+        imgElem.id = String(i + 1);             // +1 da Array
+        anzeigeflaeche.appendChild(imgElem);    // wird auf der Anzeigefläche ausgegeben
+    }*/
     const optionsHead = document.querySelectorAll(".auswahlbilder"); // es wird eine Variable erstellt, in der alle HTML-Elemente gespeichert aus der Klasse "Auswahlbilder"
     function highlightSelection(element) {
         optionsHead.forEach(element => {

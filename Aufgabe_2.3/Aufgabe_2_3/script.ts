@@ -2,7 +2,7 @@
 
 namespace Aufgabe02 {
     //const save: HTMLElement = document.getElementById("save");     -- wird erst später benötigt
-    const anzeigeflaeche: HTMLElement = document.getElementById("anzeigeflaeche");   // in der Anzeigefläche wird folgendes ausgegeben
+    //const anzeigeflaeche: HTMLElement = document.getElementById("anzeigeflaeche");   // in der Anzeigefläche wird folgendes ausgegeben
     class Flower {
         head: string;
         body: string;
@@ -27,13 +27,13 @@ namespace Aufgabe02 {
     }
     let flower: Flower = new Flower();          // neue Blume (Objekt) anlegen
 
-    for (let i: number = 0; i < kopfBilder.length; i++) {
+    /*for (let i: number = 0; i < kopfBilder.length; i++) {
         const imgElem: HTMLImageElement = document.createElement("img");  // wir erstellen neue Bildelemente aus zu data.js - zu jedem Bild wird ein Bildelement verlinkt und angelegt 
         imgElem.src = kopfBilder[i];           
         imgElem.className = "auswahlbilder";
         imgElem.id = String(i + 1);             // +1 da Array
         anzeigeflaeche.appendChild(imgElem);    // wird auf der Anzeigefläche ausgegeben
-    }
+    }*/
 
     const optionsHead: NodeListOf<HTMLElement> = document.querySelectorAll(".auswahlbilder");    // es wird eine Variable erstellt, in der alle HTML-Elemente gespeichert aus der Klasse "Auswahlbilder"
 
