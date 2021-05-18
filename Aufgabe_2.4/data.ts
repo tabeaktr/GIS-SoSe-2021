@@ -2,9 +2,9 @@ namespace Aufgabe1_und_2 {
 
     export let koerperteile: object = {
         Kopf: [
-            "Bilder/Blume1.jpg",
-            "Bilder/Blume2.jpg",
-            "Bilder/Blume3.jpg"
+            "/Bilder/Blume1.jpg",
+            "/Bilder/Blume2.jpg",
+            "/Bilder/Blume3.jpg"
         ],
         Koerper: [
             "Bilder/Koerper1.jpg",
