@@ -7,10 +7,10 @@ namespace Aufgabe1_und_2 {
 
 
     //create img elemente
-    function createImgElement(url: string, part?: string): HTMLImageElement {
+    function createImgElement(_url: string, _part?: string): HTMLImageElement {
         const imgElem: HTMLImageElement = document.createElement("img");
-        imgElem.src = url;
-        imgElem.id = part;
+        imgElem.src = _url;
+        imgElem.id = _part;
         return imgElem;
     }
 
@@ -21,13 +21,13 @@ namespace Aufgabe1_und_2 {
     let propertyData: Property = JSON.parse(data);
 
     //data von data.ts einbindung
-    function buildPageFromData(buildData: Property): void {
-        const currentData: string[] = buildData[currentStep];
+    function buildPageFromData(_buildData: Property): void {
+        const currentData: string[] = _buildData[currentStep];
 
-        for (const koerperteile in currentData) {
-            if (Object.prototype.hasOwnProperty.call(currentData, koerperteile)) {
-                const koerperteilImgURL: string = currentData[koerperteile];
-                const imgElem: HTMLImageElement = createImgElement(koerperteilImgURL, koerperteile);
+        for (const koerperteil in currentData) {
+            if (Object.prototype.hasOwnProperty.call(currentData, koerperteil)) {
+                const koerperteilImgURL: string = currentData[koerperteil];
+                const imgElem: HTMLImageElement = createImgElement(koerperteilImgURL, koerperteil);
                 imgElem.classList.add("pic-reel");
                 anzeigeflaeche.appendChild(imgElem);
             }
@@ -36,22 +36,21 @@ namespace Aufgabe1_und_2 {
     buildPageFromData(propertyData);
 
     //select, store and show chosen elements
-
-    function selectElem(id: string): void {
-        let _id: number = Number(id);
+    function selectElem(_id: string): void {
+        let id: number = Number(_id);
         let url: string = "";
         switch (currentStep) {
-            case "kopf":
-                url = getURL("Kopf", _id);
-                sessionStorage.setItem("kopf", url);
+            case "Kopf":
+                url = getURL("Kopf", id);
+                sessionStorage.setItem("Kopf", url);
                 break;
-            case "koerper":
-                url = getURL("koerper", _id);
-                sessionStorage.setItem("koerper", url);
+            case "Koerper":
+                url = getURL("Koerper", id);
+                sessionStorage.setItem("Koerper", url);
                 break;
-            case "fuesse":
-                url = getURL("fuesse", _id);
-                sessionStorage.setItem("fuesse", url);
+            case "Fuesse":
+                url = getURL("Fuesse", id);
+                sessionStorage.setItem("Fuesse", url);
                 break;
             default:
                 break;
@@ -59,42 +58,42 @@ namespace Aufgabe1_und_2 {
         paint();
     }
 
-    function getURL(koerperteil: string, id: number): string {
-        const chosenURL: string = propertyData[koerperteil][id];
+    function getURL(_koerperteil: string, _id: number): string {
+        const chosenURL: string = propertyData[_koerperteil][_id];
         return chosenURL;
     }
 
-    function showSelected(url: string): void {
-        if (url == null) {
+    function showSelected(_url: string): void {
+        if (_url == null) {
             return null;
         }
         selection.classList.add("show");
-        const imgElem: HTMLImageElement = createImgElement(url);
+        const imgElem: HTMLImageElement = createImgElement(_url);
         selection.appendChild(imgElem);
     }
 
     function paint(): void {
         selection.innerHTML = "";
-        showSelected(sessionStorage.getItem("kopf"));
-        showSelected(sessionStorage.getItem("koerper"));
-        showSelected(sessionStorage.getItem("fuesse"));
+        showSelected(sessionStorage.getItem("Kopf"));
+        showSelected(sessionStorage.getItem("Koerper"));
+        showSelected(sessionStorage.getItem("Fuesse"));
     }
     paint();
 
     const optionsHead: NodeListOf<HTMLElement> = document.querySelectorAll(".pic-reel");
 
-    function highlightSelection(elem: HTMLElement): void {
-        optionsHead.forEach(elem => {
-            elem.classList.remove("highlighted");
+    function highlightSelection(_elem: HTMLElement): void {
+        optionsHead.forEach(_elem => {
+            _elem.classList.remove("highlighted");
         });
-        elem.classList.add("highlighted");
+        _elem.classList.add("highlighted");
     }
 
     //eventlistener
-    optionsHead.forEach(elem => {
-        elem.addEventListener("click", function (): void {
-            selectElem(elem.id);
-            highlightSelection(elem);
+    optionsHead.forEach(_elem => {
+        _elem.addEventListener("click", function (): void {
+            selectElem(_elem.id);
+            highlightSelection(_elem);
         });
     });
 }

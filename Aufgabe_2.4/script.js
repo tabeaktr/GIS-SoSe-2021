@@ -6,20 +6,20 @@ var Aufgabe1_und_2;
     const currentStep = anzeigeflaeche ? anzeigeflaeche.id : "";
     const selection = document.getElementById("selection");
     //create img elemente
-    function createImgElement(url, part) {
+    function createImgElement(_url, _part) {
         const imgElem = document.createElement("img");
-        imgElem.src = url;
-        imgElem.id = part;
+        imgElem.src = _url;
+        imgElem.id = _part;
         return imgElem;
     }
     let propertyData = JSON.parse(Aufgabe1_und_2.data);
     //data von data.ts einbindung
-    function buildPageFromData(buildData) {
-        const currentData = buildData[currentStep];
-        for (const koerperteile in currentData) {
-            if (Object.prototype.hasOwnProperty.call(currentData, koerperteile)) {
-                const koerperteilImgURL = currentData[koerperteile];
-                const imgElem = createImgElement(koerperteilImgURL, koerperteile);
+    function buildPageFromData(_buildData) {
+        const currentData = _buildData[currentStep];
+        for (const koerperteil in currentData) {
+            if (Object.prototype.hasOwnProperty.call(currentData, koerperteil)) {
+                const koerperteilImgURL = currentData[koerperteil];
+                const imgElem = createImgElement(koerperteilImgURL, koerperteil);
                 imgElem.classList.add("pic-reel");
                 anzeigeflaeche.appendChild(imgElem);
             }
@@ -27,58 +27,58 @@ var Aufgabe1_und_2;
     }
     buildPageFromData(propertyData);
     //select, store and show chosen elements
-    function selectElem(id) {
-        let _id = Number(id);
+    function selectElem(_id) {
+        let id = Number(_id);
         let url = "";
         switch (currentStep) {
-            case "kopf":
-                url = getURL("Kopf", _id);
-                sessionStorage.setItem("kopf", url);
+            case "Kopf":
+                url = getURL("Kopf", id);
+                sessionStorage.setItem("Kopf", url);
                 break;
-            case "koerper":
-                url = getURL("koerper", _id);
-                sessionStorage.setItem("koerper", url);
+            case "Koerper":
+                url = getURL("Koerper", id);
+                sessionStorage.setItem("Koerper", url);
                 break;
-            case "fuesse":
-                url = getURL("fuesse", _id);
-                sessionStorage.setItem("fuesse", url);
+            case "Fuesse":
+                url = getURL("Fuesse", id);
+                sessionStorage.setItem("Fuesse", url);
                 break;
             default:
                 break;
         }
         paint();
     }
-    function getURL(koerperteil, id) {
-        const chosenURL = propertyData[koerperteil][id];
+    function getURL(_koerperteil, _id) {
+        const chosenURL = propertyData[_koerperteil][_id];
         return chosenURL;
     }
-    function showSelected(url) {
-        if (url == null) {
+    function showSelected(_url) {
+        if (_url == null) {
             return null;
         }
         selection.classList.add("show");
-        const imgElem = createImgElement(url);
+        const imgElem = createImgElement(_url);
         selection.appendChild(imgElem);
     }
     function paint() {
         selection.innerHTML = "";
-        showSelected(sessionStorage.getItem("kopf"));
-        showSelected(sessionStorage.getItem("koerper"));
-        showSelected(sessionStorage.getItem("fuesse"));
+        showSelected(sessionStorage.getItem("Kopf"));
+        showSelected(sessionStorage.getItem("Koerper"));
+        showSelected(sessionStorage.getItem("Fuesse"));
     }
     paint();
     const optionsHead = document.querySelectorAll(".pic-reel");
-    function highlightSelection(elem) {
-        optionsHead.forEach(elem => {
-            elem.classList.remove("highlighted");
+    function highlightSelection(_elem) {
+        optionsHead.forEach(_elem => {
+            _elem.classList.remove("highlighted");
         });
-        elem.classList.add("highlighted");
+        _elem.classList.add("highlighted");
     }
     //eventlistener
-    optionsHead.forEach(elem => {
-        elem.addEventListener("click", function () {
-            selectElem(elem.id);
-            highlightSelection(elem);
+    optionsHead.forEach(_elem => {
+        _elem.addEventListener("click", function () {
+            selectElem(_elem.id);
+            highlightSelection(_elem);
         });
     });
 })(Aufgabe1_und_2 || (Aufgabe1_und_2 = {}));

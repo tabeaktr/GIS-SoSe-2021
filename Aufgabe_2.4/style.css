@@ -52,6 +52,7 @@ button {
 
 .anzeigeflaeche img {
     max-height: 150px;
+    flex-direction: column;
 }
 
 img {
@@ -60,4 +61,9 @@ img {
     width: auto;
     border: 5px solid whitesmoke;
     box-shadow: 3px 5px 10px rgb(205,197,191);
+    flex-direction: column;
+}
+
+.selection {
+    flex-direction: column;
 }
