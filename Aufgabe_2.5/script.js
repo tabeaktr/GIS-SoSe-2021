@@ -5,15 +5,16 @@ var Aufgabe2_5;
     const anzeigeflaeche = document.querySelector(".anzeigeflaeche");
     const currentStep = anzeigeflaeche ? anzeigeflaeche.id : "";
     const selection = document.getElementById("selection");
+    const heroku = document.getElementById("heroku");
     let data;
     async function communicate(_url) {
         let response = await fetch(_url);
         let antwort = await response.json();
         data = antwort;
-        buildPageFromData(antwort);
+        buildPageFromData(data);
         console.log(antwort);
     }
-    communicate("https://raw.githubusercontent.io/tabeaktr-stack/GIS-SoSe-2021/main/Aufgabe_2.5/data.json");
+    communicate("https://tabeaktr.github.io/GIS-SoSe-2021/Aufgabe_2.5/data.json?1"); //?1 um Cache zu refreshen
     //create img elemente
     function createImgElement(_url, _teil) {
         const imgElem = document.createElement("img");
@@ -87,8 +88,6 @@ var Aufgabe2_5;
         showSelected(sessionStorage.getItem("Koerper"));
         showSelected(sessionStorage.getItem("Fuesse"));
     }
-    paint();
-    const heroku = document.getElementById("heroku");
     if (heroku) {
         communicateHeroku("https://gis-communication.herokuapp.com");
         async function communicateHeroku(_url) {
