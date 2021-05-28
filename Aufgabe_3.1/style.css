@@ -1,22 +1,22 @@
-html {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #button {
-    border-radius: 1px solid rosybrown;
-    background-color:rosybrown;
-    margin-top: 20px;
-    border-color:rosybrown;
+    background-color:burlywood;
+    border: none;
+    margin-top: 17px;
+    height: 30px;
 }
 
 #button:hover {
-    color: grey;
+    background-color: rgb(237, 203, 159);
 }
 
 h1 {
-    color: rosybrown;
+    color: burlywood;
 }
 
-p {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+label {
+    font-size: 16px;
 }

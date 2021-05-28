@@ -9,8 +9,7 @@
     <title>Kontaktformular</title>
 </head>
 <body>
-    <form> 
-        
+    <form method="POST">     <!--Schiebt die Daten ins Netzwerk-Tab anstatt in die URL-->
         <h1>Kontaktformular</h1>
 
         <label for="vname">Vorname:</label> <br>
@@ -20,14 +19,12 @@
         <input type="text" name="nname" id="nname"><br>
 
         <label for="telefon">Mobil:</label> <br>
-        <input type="text" name="telefon" id="Telefon"><br>
+        <input type="text" name="mobil" id="mobil"><br>
 
         <label for="adresse">Adresse:</label> <br>
         <input type="text" name="adresse" id="adresse"><br>
 
-        <button type="button" id="button">Absenden</button>
-
-    </form>
-    
+        <button type="submit" id="button">Abschicken</button>
+    </form> 
 </body>
 </html>

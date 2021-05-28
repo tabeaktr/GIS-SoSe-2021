@@ -9,6 +9,7 @@ var Aufgabe_3_1;
         let _url = "https://tabea-ketterer.herokuapp.com";
         let query = new URLSearchParams(formData);
         _url = _url + "?" + query.toString();
+        console.log(_url);
         await fetch(_url);
         for (let entry of query) {
             console.log(entry);

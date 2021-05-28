@@ -1,17 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.A3_1Server = void 0;
+exports.A_3_1_Server = void 0;
 const Http = require("http");
-var A3_1Server;
-(function (A3_1Server) {
-    console.log("Starting server"); //Konsole gibt Starting server aus
+var A_3_1_Server;
+(function (A_3_1_Server) {
+    console.log("Starting server"); // Starting server wird auf der Konsole ausgegeben
     let port = Number(process.env.PORT);
     if (!port)
-        port = 8100; //Port wird auf 8100 gesetzt
-    let server = Http.createServer(); //Server wird erstellt
-    server.addListener("request", handleRequest); //Funktion handleRequest wird aufgerufen
-    server.addListener("listening", handleListen); //HandleListen Funktion wird aufgerufen
-    server.listen(port); //Server hört/reagiert auf port und startet
+        port = 8100; //Port wird auf 8100 fertgelegt
+    let server = Http.createServer(); // Server wird erstellt
+    server.addListener("request", handleRequest); // Funktion handleRequest wird ausgeführt
+    server.addListener("listening", handleListen); // Funktion handleListen wird ausgeführt
+    server.listen(port);
     function handleListen() {
         console.log("Listening");
     }
@@ -20,8 +20,8 @@ var A3_1Server;
         console.log(_request.url);
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
-        _response.write(_request.url); //Url wird ausgegeben
+        _response.write(_request.url);
         _response.end(); //Response wird beendet
     }
-})(A3_1Server = exports.A3_1Server || (exports.A3_1Server = {}));
+})(A_3_1_Server = exports.A_3_1_Server || (exports.A_3_1_Server = {}));
 //# sourceMappingURL=server.js.map

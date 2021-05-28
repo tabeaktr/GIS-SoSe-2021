@@ -9,13 +9,13 @@ namespace Aufgabe_3_1 {
         let _url: RequestInfo = "https://tabea-ketterer.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams (<any>formData);
         _url = _url + "?" + query.toString();
+        console.log(_url);
         await fetch(_url);
 
         for (let entry of query) {
             console.log(entry);
             console.log("name: " + entry[0]);
             console.log("value: " + entry[1]);
-            
         }
         let response: Response = await fetch(_url);
         let answer: string = await response.text();
