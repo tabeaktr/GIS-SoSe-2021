@@ -6,7 +6,7 @@ export namespace A_3_1_Server {
     let port: number = Number(process.env.PORT);
 
     if (!port)
-        port = 8100;  //Port wird auf 8100 fertgelegt
+        port = 8100;  //Port wird auf 8100 festgelegt
 
     let server: Http.Server = Http.createServer();  // Server wird erstellt
     server.addListener("request", handleRequest);   // Funktion handleRequest wird ausgeführt

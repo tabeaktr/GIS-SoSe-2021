@@ -7,7 +7,7 @@ var A_3_1_Server;
     console.log("Starting server"); // Starting server wird auf der Konsole ausgegeben
     let port = Number(process.env.PORT);
     if (!port)
-        port = 8100; //Port wird auf 8100 fertgelegt
+        port = 8100; //Port wird auf 8100 festgelegt
     let server = Http.createServer(); // Server wird erstellt
     server.addListener("request", handleRequest); // Funktion handleRequest wird ausgeführt
     server.addListener("listening", handleListen); // Funktion handleListen wird ausgeführt
