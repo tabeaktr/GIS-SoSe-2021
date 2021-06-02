@@ -16,12 +16,12 @@ var A_3_1_Server;
         console.log("Listening");
     }
     function handleRequest(_request, _response) {
-        console.log("I hear voices!");
+        console.log("I hear voices!"); // in der Konsole wird ausgegeben "I hear voices!"
         console.log(_request.url);
-        _response.setHeader("content-type", "text/html; charset=utf-8");
-        _response.setHeader("Access-Control-Allow-Origin", "*");
-        _response.write(_request.url);
-        _response.end(); //Response wird beendet
+        _response.setHeader("content-type", "text/html; charset=utf-8"); // setzt den header http.ServerAntwort auf HTML mit Zeichencode UTF-8
+        _response.setHeader("Access-Control-Allow-Origin", "*"); // erlaubt dem Browser Code egal welchen Ursprungs anzufragen, um die Ressource zu erreichen
+        _response.write(_request.url); // Server frägt URL an
+        _response.end(); // Response wird beendet
     }
 })(A_3_1_Server = exports.A_3_1_Server || (exports.A_3_1_Server = {}));
 //# sourceMappingURL=server.js.map

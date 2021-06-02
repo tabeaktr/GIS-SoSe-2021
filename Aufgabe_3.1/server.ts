@@ -19,15 +19,15 @@ export namespace A_3_1_Server {
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void { // I hear voices wird in der Konsole ausgegeben
 
-        console.log("I hear voices!");
-        console.log(_request.url);
+        console.log("I hear voices!");      // in der Konsole wird ausgegeben "I hear voices!"
+        console.log(_request.url);        
 
-        _response.setHeader("content-type", "text/html; charset=utf-8");
-        _response.setHeader("Access-Control-Allow-Origin", "*");
+        _response.setHeader("content-type", "text/html; charset=utf-8");    // setzt den header http.ServerAntwort auf HTML mit Zeichencode UTF-8
+        _response.setHeader("Access-Control-Allow-Origin", "*");            // erlaubt dem Browser Code egal welchen Ursprungs anzufragen, um die Ressource zu erreichen
 
-        _response.write(_request.url);
+        _response.write(_request.url);                  // Server frägt URL an
 
-        _response.end(); //Response wird beendet
+        _response.end(); // Response wird beendet
     
     }
 }
