@@ -3,19 +3,19 @@
 var Aufgabe_3_2;
 (function (Aufgabe_3_2) {
     let buttonJSON = document.getElementById("buttonJSON");
-    buttonJSON.addEventListener("click", handlejson);
+    buttonJSON.addEventListener("click", handlejson); // click weist dem Button JSON zu
     let buttonHTML = document.getElementById("buttonHTML");
-    buttonHTML.addEventListener("click", handlehtml);
+    buttonHTML.addEventListener("click", handlehtml); // click weist dem Button html zu
     let server = document.getElementById("server");
     async function handlehtml() {
-        let formData = new FormData(document.forms[0]);
+        let formData = new FormData(document.forms[0]); // erzeugt FormData Objekt aus <form>
         let url = "https://tabea-ketterer.herokuapp.com";
         url += "/html";
         let query = new URLSearchParams(formData);
         url = url += "?" + query.toString();
         let response = await fetch(url);
         let responseText = await response.text();
-        server.innerHTML = responseText;
+        server.innerHTML = responseText; // füllt die index.html aus
     }
     async function handlejson() {
         let formData = new FormData(document.forms[0]);

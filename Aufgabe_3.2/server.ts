@@ -1,7 +1,7 @@
 import * as Http from "http";
 import * as Url from "url";                        // Server wird mit * erstellt - alle Funkionen werden importiert
 
-export namespace A3_2Server {
+export namespace A_3_2Server {
 
     console.log("Starting server");                // Starting server wird auf der Konsole ausgegeben
 
