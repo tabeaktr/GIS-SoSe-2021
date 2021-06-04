@@ -13,7 +13,7 @@ namespace Aufgabe_3_2 {
         let url: string = "https://tabea-ketterer.herokuapp.com";
         url += "/html";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        url = url += "?" + query.toString();
+        url = url + query.toString();
         let response: Response = await fetch(url);
         let responseText: string = await response.text();
         server.innerHTML = responseText;                    // füllt die index.html aus
