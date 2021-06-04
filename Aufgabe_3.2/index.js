@@ -24,11 +24,8 @@ var Aufgabe_3_2;
         let query = new URLSearchParams(formData);
         url = url += "?" + query.toString();
         let response = await fetch(url);
-        let responseText = await response.text();
+        let responseText = await response.json();
         console.log(responseText);
-        let responseJSON = JSON.parse(responseText);
-        console.log(responseJSON);
-        server.innerHTML = responseText;
         console.log(server);
     }
 })(Aufgabe_3_2 || (Aufgabe_3_2 = {}));

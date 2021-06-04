@@ -26,12 +26,12 @@ namespace Aufgabe_3_2 {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url += "?" + query.toString();
         let response: Response = await fetch(url);
-        let responseText: string = await response.text();
+        let responseText: IResponse = await response.json();
         console.log(responseText);
-        let responseJSON: JSON = JSON.parse(responseText);
-        console.log(responseJSON);
-
-        server.innerHTML = responseText;
         console.log(server);
+    }
+
+    interface IResponse {
+        [key: string]: string;      //jede Info, die hereinkommt muss vom Typ string sein  , weiß auch, dass zweite Seite automatisch value ist
     }
 }
