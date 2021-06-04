@@ -22,7 +22,7 @@ var Aufgabe_3_2;
         let url = "https://tabea-ketterer.herokuapp.com";
         url += "/json";
         let query = new URLSearchParams(formData);
-        url = url += "?" + query.toString();
+        url = url + query.toString();
         let response = await fetch(url);
         let responseText = await response.json();
         console.log(responseText);

@@ -24,7 +24,7 @@ namespace Aufgabe_3_2 {
         let url: string = "https://tabea-ketterer.herokuapp.com";
         url += "/json";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        url = url += "?" + query.toString();
+        url = url + query.toString();
         let response: Response = await fetch(url);
         let responseText: IResponse = await response.json();
         console.log(responseText);
