@@ -1,10 +1,10 @@
 {
-  "name": "gis-sose-2021",
+  "name": "tabea-ketterer",
   "version": "1.0.0",
   "description": "Hi :)",
   "main": "index.js",
   "scripts": {
-    "start": "node Aufgabe_3.1/server.js"
+    "start": "node Aufgabe_3.2/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/tabeaktr/GIS-SoSe-2021#readme",
   "devDependencies": {
-    "@types/node": "^15.6.2"
+    "@types/node": "^15.12.0"
   }
 }
