@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="index.js" defer></script>
+    <title>Kontaktformular</title>
+</head>
+<body>
+    
+    <form action="https://tabea-ketterer.herokuapp.com" method="GET">
+
+        <h1>Kontaktformular</h1>
+
+        <label for="vname">Vorname:</label> <br>
+        <input type="text" name="vname" id="vname"><br>
+
+        <label for="nname">Nachname:</label> <br>
+        <input type="text" name="nname" id="nname"><br>
+
+        <label for="telefon">Mobil:</label> <br>
+        <input type="text" name="mobil" id="mobil"><br>
+
+        <label for="adresse">Adresse:</label> <br>
+        <input type="text" name="adresse" id="adresse"><br>
+
+        <button id="buttonJSON" type="button">JSON</button>
+        <button id="buttonHTML" type="button">HTML</button>
+    </form>
+    <p id= "server"></p>
+</body>
+</html>

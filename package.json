@@ -16,7 +16,7 @@
     "url": "https://github.com/tabeaktr/GIS-SoSe-2021/issues"
   },
   "homepage": "https://github.com/tabeaktr/GIS-SoSe-2021#readme",
-  "dependencies": {
-    "@types/node": "^15.6.1"
+  "devDependencies": {
+    "@types/node": "^15.6.2"
   }
 }

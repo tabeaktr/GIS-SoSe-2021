@@ -1,0 +1,33 @@
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#buttonJSON {
+    background-color:burlywood;
+    border: none;
+    margin-top: 17px;
+    height: 30px;
+}
+
+#buttonJSON:hover {
+    background-color: rgb(237, 203, 159);
+}
+
+#buttonHTML {
+    background-color:burlywood;
+    border: none;
+    margin-top: 17px;
+    height: 30px;
+}
+
+#buttonHTML:hover {
+    background-color: rgb(237, 203, 159);
+}
+
+h1 {
+    color: burlywood;
+}
+
+label {
+    font-size: 16px;
+}
