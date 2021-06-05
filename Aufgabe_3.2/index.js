@@ -27,5 +27,8 @@ var Aufgabe_3_2;
         let responseText = await response.json();
         console.log(responseText);
     }
+    /*interface IResponse {
+        [key: string]: string;      //jede Info, die hereinkommt muss vom Typ string sein  , weiß auch, dass zweite Seite automatisch value ist
+    }*/
 })(Aufgabe_3_2 || (Aufgabe_3_2 = {}));
 //# sourceMappingURL=index.js.map

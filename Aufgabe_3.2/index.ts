@@ -26,11 +26,18 @@ namespace Aufgabe_3_2 {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
         let response: Response = await fetch(url);
-        let responseText: IResponse = await response.json();
+        let responseText: Angaben = await response.json();
         console.log(responseText);
     }
 
-    interface IResponse {
-        [key: string]: string;      //jede Info, die hereinkommt muss vom Typ string sein  , weiß auch, dass zweite Seite automatisch value ist
+    interface Angaben {
+        vname: string;
+        nname: string;
+        mobil: string;
+        adresse: string;
     }
+
+    /*interface IResponse {
+        [key: string]: string;      //jede Info, die hereinkommt muss vom Typ string sein  , weiß auch, dass zweite Seite automatisch value ist
+    }*/
 }
