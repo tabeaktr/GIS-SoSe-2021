@@ -36,8 +36,4 @@ namespace Aufgabe_3_2 {
         mobil: string;
         adresse: string;
     }
-
-    /*interface IResponse {
-        [key: string]: string;      //jede Info, die hereinkommt muss vom Typ string sein  , weiß auch, dass zweite Seite automatisch value ist
-    }*/
 }
