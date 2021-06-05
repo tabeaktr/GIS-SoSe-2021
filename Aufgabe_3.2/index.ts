@@ -28,14 +28,12 @@ namespace Aufgabe_3_2 {
         let response: Response = await fetch(url);
         let responseTextA: Angaben = await response.json();
         console.log(responseTextA);
-
-        interface Angaben {
-            vname: string;
-            nname: string;
-            mobil: string;
-            adresse: string;
-        }
     }
 
-    
+    interface Angaben {
+        vname: string;
+        nname: string;
+        mobil: string;
+        adresse: string;
+    }
 }
