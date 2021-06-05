@@ -26,8 +26,8 @@ namespace Aufgabe_3_2 {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
         let response: Response = await fetch(url);
-        let responseText: Angaben = await response.json();
-        console.log(responseText);
+        let responseTextA: Angaben = await response.json();
+        console.log(responseTextA);
     }
 
     interface Angaben {
