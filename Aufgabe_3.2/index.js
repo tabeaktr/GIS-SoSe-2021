@@ -24,8 +24,8 @@ var Aufgabe_3_2;
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
         let response = await fetch(url);
-        let responseText = await response.json();
-        console.log(responseText);
+        let responseTextA = await response.json();
+        console.log(responseTextA);
     }
 })(Aufgabe_3_2 || (Aufgabe_3_2 = {}));
 //# sourceMappingURL=index.js.map

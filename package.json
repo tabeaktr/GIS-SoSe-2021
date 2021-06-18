@@ -4,7 +4,7 @@
   "description": "Hi :)",
   "main": "index.js",
   "scripts": {
-    "start": "node Aufgabe_3.2/server.js"
+    "start": "node Aufgabe_3.4/server.js remote"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,9 @@
   "homepage": "https://github.com/tabeaktr/GIS-SoSe-2021#readme",
   "devDependencies": {
     "@types/node": "^15.12.0"
+  },
+  "dependencies": {
+    "@types/mongodb": "^3.6.18",
+    "mongodb": "^3.6.9"
   }
 }

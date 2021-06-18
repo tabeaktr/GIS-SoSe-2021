@@ -1,0 +1,54 @@
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: burlywood;
+}
+
+h2 {
+    color: burlywood;
+}
+
+#datenAbschicken {
+    background-color:burlywood;
+    border: none;
+    border-radius: 3px;
+    margin-top: 17px;
+    height: 30px;
+}
+
+#datenAbschicken:hover {
+    background-color: rgb(237, 203, 159);
+}
+
+#datenErhalten {
+    background-color:burlywood;
+    border: none;
+    border-radius: 3px;
+    margin-top: 17px;
+    height: 30px;
+}
+
+#datenErhalten:hover {
+    background-color: rgb(237, 203, 159);
+}
+
+#datenEntfernen {
+    background-color:burlywood;
+    border: none;
+    border-radius: 3px;
+    margin-top: 17px;
+    height: 30px;
+}
+
+#datenEntfernen:hover {
+    background-color: rgb(237, 203, 159);
+}
+
+h1 {
+    color: burlywood;
+}
+h2 {
+    color: burlywood;
+}
