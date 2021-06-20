@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Aufgabe3_4 = void 0;
-//mongodb+srv://Testuser:GIS404@sebieyesstonegis-ist-ge.oawwp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+exports.Aufgabe_3_4 = void 0;
+//mongodb+srv://User1:hello246@tabea.fzpsx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
-var Aufgabe3_4;
-(function (Aufgabe3_4) {
+var Aufgabe_3_4;
+(function (Aufgabe_3_4) {
     let mongoCollection;
-    //let mongoUrl: string = "mongodb+srv://Testuser:GIS404@sebieyesstonegis-ist-ge.oawwp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-    let mongoUrl = "mongodb+srv://Testuser:GIS404@sebieyesstonegis-ist-ge.oawwp.mongodb.net";
+    //let mongoUrl: string = "mongodb+srv://User1:hello246@tabea.fzpsx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    let mongoUrl = "mongodb+srv://User1:hello246@tabea.fzpsx.mongodb.net";
     //let mongoUrl: string = "mongodb://localhost:27017";
     let port = Number(process.env.PORT);
     if (!port)
@@ -31,7 +31,7 @@ var Aufgabe3_4;
         console.log("Listening");
     }
     async function handleRequest(_request, _response) {
-        console.log("I hear voices!"); //Konsole gibt I hear voices aus
+        console.log("I hear voices!");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
@@ -45,11 +45,11 @@ var Aufgabe3_4;
                 _response.write(JSON.stringify(await (mongoCollection.find().toArray())));
             }
             else if (pathname == "/entfernen") {
-                mongoCollection.deleteOne({ "name": url.query["name"], "nachname": url.query["nachname"], "matrikelnummer": url.query["matrikelnummer"] });
+                mongoCollection.deleteOne({ "vname": url.query["vname"], "nname": url.query["nname"], "mnumber": url.query["mnumber"] });
                 connectToDatabase(mongoUrl);
             }
         }
         _response.end();
     }
-})(Aufgabe3_4 = exports.Aufgabe3_4 || (exports.Aufgabe3_4 = {}));
+})(Aufgabe_3_4 = exports.Aufgabe_3_4 || (exports.Aufgabe_3_4 = {}));
 //# sourceMappingURL=server.js.map
