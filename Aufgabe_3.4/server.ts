@@ -55,7 +55,7 @@ export namespace Aufgabe_3_4 {
                 _response.write(JSON.stringify(await(mongoCollection.find().toArray())));
                 
             } else if (pathname == "/entfernen") {
-                mongoCollection.deleteOne({"vname": url.query ["vname"], "nname": url.query ["nname"], "mnumber": url.query ["mnumber"]});
+                mongoCollection.deleteOne({"name": url.query ["name"], "firstname": url.query ["firstname"], "matrikelnummer": url.query ["matrikelnummer"]});
                 connectToDatabase(mongoUrl);
             }
         }
