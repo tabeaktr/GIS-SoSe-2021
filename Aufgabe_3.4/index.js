@@ -1,4 +1,5 @@
 "use strict";
+// Mit Sebastiana und Benni erstellt
 var Aufgabe_3_4;
 (function (Aufgabe_3_4) {
     let buttonAbschicken = document.getElementById("datenAbschicken");

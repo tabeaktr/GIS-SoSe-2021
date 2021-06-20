@@ -1,4 +1,3 @@
-//mongodb+srv://User1:hello246@tabea.fzpsx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";

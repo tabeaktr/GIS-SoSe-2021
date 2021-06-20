@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Aufgabe_3_4 = void 0;
-//mongodb+srv://User1:hello246@tabea.fzpsx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");

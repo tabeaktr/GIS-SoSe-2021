@@ -1,3 +1,5 @@
+// Mit Sebastiana und Benni erstellt
+
 namespace Aufgabe_3_4 {
     let buttonAbschicken: HTMLButtonElement = <HTMLButtonElement>document.getElementById("datenAbschicken");
     buttonAbschicken.addEventListener("click", clickAbschicken);
