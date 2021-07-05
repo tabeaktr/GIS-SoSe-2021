@@ -1,0 +1,23 @@
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: burlywood;
+}
+
+h2 {
+    color: burlywood;
+}
+
+button {
+    background-color:burlywood;
+    border: none;
+    border-radius: 5px;
+    margin-top: 17px;
+    height: 30px;
+}
+
+button:hover {
+    background-color: rgb(237, 203, 159);
+}
