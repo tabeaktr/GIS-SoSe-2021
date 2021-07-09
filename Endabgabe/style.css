@@ -1,23 +1,66 @@
 * {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    align-content: center;
+    text-align: center;
+    font-weight: lighter;
+}
+
+body {
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#bodyStart {
+    margin-top: 300px;
 }
 
 h1 {
-    color: burlywood;
+    color: rgb(203, 170, 135);
+    font-size: 50px;
+    margin-top: 150px;
 }
 
-h2 {
-    color: burlywood;
+a {
+    text-decoration: none;
+    background-color: rgb(207, 215, 204);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 button {
-    background-color:burlywood;
+    background-color:rgb(207, 215, 204);
     border: none;
+    padding: 10px;
     border-radius: 5px;
-    margin-top: 17px;
-    height: 30px;
+    width: 115px;
 }
 
-button:hover {
-    background-color: rgb(237, 203, 159);
+#start1 {
+    width: 170px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.karte {
+    width: 100px;
+    height: 150px;
+    margin: 10px;
+    position: relative;
+}
+
+.verdeckt {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+}
+
+.aufgedeckt {
+    width: 100px;
+    height: 150px;
 }
