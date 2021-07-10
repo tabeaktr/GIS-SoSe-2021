@@ -30,7 +30,8 @@ async function handleRequest(_request, _response) {
         let pathname = url.pathname;
         if (pathname == "/addUrl") {
             urlCollection.insertOne(url.query);
-            connectToDatabase(mongoUrl); //eigentlich sinnlos, aber vorlage P3.4
+            connectToDatabase(mongoUrl);
+            console.log("test123 konsole log"); //eigentlich sinnlos, aber vorlage P3.4
         }
         if (pathname == "/getUrl") {
             _response.write(JSON.stringify(await (urlCollection.find().toArray())));
