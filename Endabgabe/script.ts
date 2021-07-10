@@ -22,6 +22,7 @@ async function makeCards(): Promise<void> {
     listOfUrl = listOfUrl.concat(dupListOfUrl); //langes array mit jedem der 8 Bilder aus der Datenbank doppelt
     shuffle(listOfUrl);
     fillBoard(listOfUrl);
+    timer();
 }
 
 makeCards();
@@ -45,14 +46,49 @@ function shuffle(array: any): [] {
     return array;
 }
 
+const cells = document.querySelectorAll("td");
 //tabelle füllen
 function fillBoard(array: any) {
-    // for (let i: number = 0; array.length; i++) {
-    //    let imageSpot: HTMLElement = document.getElementById("i");
-    //    imageSpot.innerHTML = "<img class='memoryBild' src='" + array[i].url.toString() + "'></img>";
-    // }
-    const cells = document.querySelectorAll("td");
-    cells.forEach(function (cell) {
-        cell.innerHTML = "<img class='Karten' src='" + array[cell.id].url.toString() + "'></img>";
-    });
+
+    for (let index: number = 0; index < array.length; index++) {
+
+        cells[index].innerHTML = "<img class='verdeckt' src='" + "./images/background.jpg" + "'></img>"; //" + array[index].url.toString() + "
+        console.log(cells[index].innerHTML);
+        cells[index].addEventListener("click", () => { karteKlicken(cells[index], array[index].url.toString()); }); //FIXME
+    }
+}
+
+let ersteKarte: HTMLTableDataCellElement;
+let spielScore: number;
+
+function karteKlicken(_td: HTMLTableDataCellElement, _url: string) {
+    _td.className = "karten";
+
+    if (ersteKarte == null) {
+        ersteKarte = _td;
+        _td.innerHTML = "<img class='' src='" + _url + "'></img>";
+    } else {
+        if (_td == ersteKarte) {
+            _td.removeEventListener("click", () => { karteKlicken(ersteKarte, _url); });
+            spielScore++;
+        }
+    }
+
+    ersteKarte = null;
+    if (spielScore == 8) {
+        spielBeenden();
+    }
+}
+
+const scoreForm: HTMLElement = document.getElementById("punkte");
+
+function spielBeenden(): void {
+    scoreForm.hidden = false;
+}
+
+let sekunden: number = 0;
+let timerHTML: HTMLElement = document.getElementById("zeit");
+function timer(): void {
+    sekunden++;
+    timerHTML.innerHTML = "Zeit: " + Math.floor(sekunden / 60) + " : " + (sekunden % 60);
 }
