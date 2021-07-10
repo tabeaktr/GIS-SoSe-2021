@@ -15,4 +15,15 @@
    // 2. Array[0] entfernen (https://stackoverflow.com/questions/15292278/how-do-i-remove-an-array-item-in-typescript)
 
 */
+async function clickAbschicken() {
+    // let form: FormData = new FormData(document.forms[0]);
+    // let url: string = "https://tabea-ketterer.herokuapp.com";
+    // let query: URLSearchParams = new URLSearchParams(<any>form);
+    // url = url + "/abschicken" + "?" + query.toString();
+    // await fetch(url);
+    let response = await fetch("https://tabea-ketterer.herokuapp.com/getUrl");
+    let listOfUrl = await response.json();
+    let dupListOfUrl = listOfUrl;
+    listOfUrl = listOfUrl.concat(dupListOfUrl);
+}
 //# sourceMappingURL=script.js.map

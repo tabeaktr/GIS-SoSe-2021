@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
-const mongoUrl = "mongodb+srv://User1:hello246@tabea.fzpsx.mongodb.net";
+let mongoUrl = "mongodb+srv://User1:hello246@tabea.fzpsx.mongodb.net";
 let timeCollection;
 let urlCollection;
 let port = Number(process.env.PORT);
@@ -20,6 +20,7 @@ async function connectToDatabase(_url) {
     await mongoClient.connect();
     urlCollection = mongoClient.db("Test").collection("URL");
     timeCollection = mongoClient.db("Test").collection("Times");
+    console.log("hi");
 }
 async function handleRequest(_request, _response) {
     _response.setHeader("content-type", "text/html; charset=utf-8");
@@ -29,14 +30,14 @@ async function handleRequest(_request, _response) {
         let pathname = url.pathname;
         if (pathname == "/addUrl") {
             urlCollection.insertOne(url.query);
-            connectToDatabase(mongoUrl);
+            connectToDatabase(mongoUrl); //eigentlich sinnlos, aber vorlage P3.4
         }
         if (pathname == "/getUrl") {
             _response.write(JSON.stringify(await (urlCollection.find().toArray())));
         }
         else if (pathname == "/removeUrl") {
             urlCollection.deleteOne(url.query);
-            connectToDatabase(mongoUrl);
+            connectToDatabase(mongoUrl); //eigentlich sinnlos, aber vorlage P3.4
         }
         if (pathname == "/addScore") {
             timeCollection.insertOne(url.query);

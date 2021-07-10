@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/tabeaktr/GIS-SoSe-2021#readme",
   "devDependencies": {
-    "@types/node": "^15.12.0"
+    "@types/node": "^15.12.0",
+    "@types/mongodb": "^3.6.18"
   },
   "dependencies": {
-    "@types/mongodb": "^3.6.18",
     "mongodb": "^3.6.9"
   }
 }

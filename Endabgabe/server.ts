@@ -2,7 +2,7 @@ import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
 
-const mongoUrl: string = "mongodb+srv://User1:hello246@tabea.fzpsx.mongodb.net";
+let mongoUrl: string = "mongodb+srv://User1:hello246@tabea.fzpsx.mongodb.net";
 
 let timeCollection: Mongo.Collection;
 let urlCollection: Mongo.Collection;
@@ -28,6 +28,7 @@ async function connectToDatabase(_url: string): Promise<void> {
 
     urlCollection = mongoClient.db("Test").collection("URL");
     timeCollection = mongoClient.db("Test").collection("Times");
+    console.log("hi");
 }
 
 async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
@@ -41,14 +42,14 @@ async function handleRequest(_request: Http.IncomingMessage, _response: Http.Ser
 
         if (pathname == "/addUrl") {
             urlCollection.insertOne(url.query);
-            connectToDatabase(mongoUrl);
+            connectToDatabase(mongoUrl); //eigentlich sinnlos, aber vorlage P3.4
         }
         if (pathname == "/getUrl") {
             _response.write(JSON.stringify(await (urlCollection.find().toArray())));
 
         } else if (pathname == "/removeUrl") {
             urlCollection.deleteOne(url.query);
-            connectToDatabase(mongoUrl);
+            connectToDatabase(mongoUrl);  //eigentlich sinnlos, aber vorlage P3.4
         }
         if (pathname == "/addScore") {
             timeCollection.insertOne(url.query);
