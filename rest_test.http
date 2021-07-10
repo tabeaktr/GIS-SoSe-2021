@@ -1,1 +1,1 @@
-GET https://tabea-ketterer.herokuapp.com/addUrl?url=https://i.pinimg.com/564x/7a/ff/9e/7aff9e3e3c32330d68d52184afdef645.jpg
+GET https://tabea-ketterer.herokuapp.com/addUrl?url=https%3A%2F%2Fi.pinimg.com%2F564x%2F7a%2Fff%2F9e%2F7aff9e3e3c32330d68d52184afdef645.jpg
