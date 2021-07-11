@@ -1,24 +1,19 @@
 
 let highscoresDiv = document.getElementById("scoreboard");
-console.log(highscoresDiv);
 highscores(highscoresDiv);
 
 async function highscores(_flaeche: HTMLElement): Promise<void> {
 
-    let flaeche = document.getElementById("scoreboard");
-
     let scores: Response = await fetch("https://tabea-ketterer.herokuapp.com/getScore");
     let scoresListe = await scores.json();
+    scoresListe.sort(sortByProperty("time"));
 
     console.log(scoresListe);
 
-    console.log(flaeche);
-
-
     for (let i: number = 0; i <= scoresListe.length - 1; i++) {
         let scoreDiv = document.createElement("div");
-        scoreDiv.innerHTML = scoresListe[i];
-        flaeche.appendChild(scoreDiv);
+        scoreDiv.innerHTML = scoresListe[i].name + " " + scoresListe[i].time;
+        _flaeche.appendChild(scoreDiv);
     }
 
 }

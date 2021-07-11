@@ -1,19 +1,3 @@
-/*
-1. Array mit Bild-Urls aus DB laden.
-2. Array duplizieren (
-    arrayAusDB;
-    arrayAusDB = arrayAusDB.concat(arrayAusDB);
-
-    wenn nicht:
-        array2 = arrayAusDB;
-)
-
-3. Array shuffeln
-4. Durch Array Loopen:
-    1. Array[i] auf aktuelle index i als id im html setzen (innerhtml)
-   // 2. Array[0] entfernen (https://stackoverflow.com/questions/15292278/how-do-i-remove-an-array-item-in-typescript)
-
-*/
 let timer: NodeJS.Timeout;
 async function makeCards(): Promise<void> {
     let response: Response = await fetch("https://tabea-ketterer.herokuapp.com/getUrl");
@@ -94,7 +78,7 @@ function karteKlicken(_td: HTMLTableDataCellElement, _url: string) {
         spielBeenden();
     }
 }
-//TODO TIMER!!
+
 let minutesLabel = document.getElementById("minutes");
 let secondsLabel = document.getElementById("seconds");
 let totalSeconds: number = 0;

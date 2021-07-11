@@ -42,7 +42,7 @@ async function handleRequest(_request, _response) {
         }
         if (pathname == "/addScore") {
             timeCollection.insertOne(url.query);
-            connectToDatabase(mongoUrl);
+            connectToDatabase(mongoUrl); //eigentlich sinnlos, aber vorlage P3.4
         }
         if (pathname == "/getScore") {
             _response.write(JSON.stringify(await (timeCollection.find().toArray())));
