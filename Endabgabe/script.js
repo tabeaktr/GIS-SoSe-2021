@@ -20,9 +20,9 @@ async function makeCards() {
     let listeUrl = await response.json();
     let dupListeUrl = listeUrl;
     listeUrl = listeUrl.concat(dupListeUrl); //langes array mit jedem der 8 Bilder aus der Datenbank doppelt
-    //shuffle(listeUrl);
+    shuffle(listeUrl); //FIX SHUFFLE ACTIVE
     fillBoard(listeUrl);
-    //timer();
+    //setTime();
 }
 makeCards();
 //Knuth Shuffle Algorithmus (https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
@@ -80,13 +80,34 @@ function karteKlicken(_td, _url) {
         spielBeenden();
     }
 }
+//TODO TIMER!!
+// let minutesLabel = document.getElementById("minutes");
+// let secondsLabel = document.getElementById("seconds");
+// let totalSeconds = 0;
+// setInterval(setTime, 1000);
 function spielBeenden() {
-    const scoreForm = document.getElementById("punkte");
-    console.log(scoreForm);
-    scoreForm.hidden = false;
+    const punkteForm = document.getElementById("punkte");
+    let scoreForm = document.querySelector("form");
+    // punkteForm.hidden = false;
+    // scoreForm.addEventListener("submit", (e) => {
+    //     e.preventDefault();
+    //     fetch("https://tabea-ketterer.herokuapp.com/addScore?name=" + encodeURI((document.getElementById("nameSpieler") as HTMLInputElement).value) + "&time=" + encodeURI(minutesLabel.innerHTML) + ":" + secondsLabel.innerHTML);
+    //     scoreForm.reset();
+    // });
 }
-// let sekunden: number = 0;
-// let timerHTML: HTMLElement = document.getElementById("zeit");
+// function pad(_val: number) { //(https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript)
+//     let valString = _val + "";
+//     if (valString.length < 2) {
+//         return "0" + valString;
+//     } else {
+//         return valString;
+//     }
+// }
+// function setTime(): void {
+//     ++totalSeconds;
+//     secondsLabel.innerHTML = pad(totalSeconds % 60);
+//     minutesLabel.innerHTML = pad(totalSeconds / 60);
+// }
 // function timer(): void {
 //     sekunden++;
 //     timerHTML.innerHTML = "Zeit: " + Math.floor(sekunden / 60) + " : " + (sekunden % 60);

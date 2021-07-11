@@ -24,3 +24,7 @@ GET https://tabea-ketterer.herokuapp.com/addUrl?url=https://i.pinimg.com/564x/b1
 
 ###
 GET https://tabea-ketterer.herokuapp.com/getUrl
+###
+GET https://tabea-ketterer.herokuapp.com/getScores
+###
+GET https://tabea-ketterer.herokuapp.com/addScore?name=test23&time=1:24
