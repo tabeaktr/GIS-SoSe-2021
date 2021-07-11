@@ -27,9 +27,9 @@ async function bildEntfernen(_url: string): Promise<void> {
 window.addEventListener("load", () => {
     let anzeigeflaeche = document.getElementById("anzeigeflaeche");
     memoryKarten(anzeigeflaeche);
-    document.getElementsByTagName("form")[0].addEventListener("submit", async (e)=>{
+    document.getElementsByTagName("form")[0].addEventListener("submit", async (e) => {
         e.preventDefault();
-        await fetch("https://tabea-ketterer.herokuapp.com/addUrl?url=" + encodeURI(document.getElementById("neuesBild").value.toString()));
+        await fetch("https://tabea-ketterer.herokuapp.com/addUrl?url=" + encodeURI((document.getElementById("neuesBild") as HTMLInputElement).value.toString()));
         window.location.reload();
     });
 });
