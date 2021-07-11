@@ -7,8 +7,8 @@
 }
 
 body {
-    background-image: url("images/background.jpg");
-    background-repeat: no-repeat;
+    background-image: url("images/background.JPG");
+    background-repeat: repeat-y;
     background-size: 100%;
 }
 
@@ -17,7 +17,8 @@ body {
 }
 
 h1 {
-    color: rgb(203, 170, 135);
+    color: rgb(222, 173, 143);
+    background-color: rgba(243, 239, 228, 0.708);
     font-size: 50px;
     margin-top: 150px;
 }
@@ -35,38 +36,35 @@ button {
     padding: 10px;
     border-radius: 5px;
     width: 115px;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 #start1 {
     width: 170px;
 }
 
-.spielflaeche {
-    margin-top: 20px;
+table {
     margin: auto;
-    width: 1300px;
-    height: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
 }
 
 .karten {
-    position: relative;
-    align-content: center;
     width: 140px;
     height: 180px;
-    margin: 5px;
+    margin: auto;
+    margin-top: 10px;
 }
 
 .verdeckt {
-    position: relative;
     align-content: center;
     width: 140px;
     height: 180px;
-    margin: 5px;
+    margin: auto;
+    margin-top: 10px;
+    margin-right: 10px;
 }
-.verdeckt:hover{
+
+.verdeckt:hover {
     border: 2px solid black;
     box-shadow: inset 0px, 0px, 0px, 5px black;
     box-sizing: border-box;
@@ -74,15 +72,57 @@ button {
 }
 
 .aufgedeckt {
-    position: absolute;
-    width: 100%;
-    max-height: 100%;
+    position: static;
+    align-content: center;
+    width: 140px;
+    height: 180px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#scoreboard {
+    margin-top: 30px;
+    font-size: 17px;
 }
 
 input {
     margin-top: 20px;
     font-size: 18px;
     width: 220px;
-    background-color: rgba(203, 170, 135, 0.125);
+    background-color: rgba(222, 173, 143, 0.125);
     border-radius: 5px;
+}
+
+#send {
+    background-color: rgb(207, 215, 204);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 115px;
+    margin-top: 30px;
+}
+
+#nameSpieler {
+    color: rgba(222, 173, 143, 0.557);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 220px;
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+#score {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+#neuesBild {
+    color: rgba(222, 173, 143, 0.557);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 220px;
+    margin-top: 30px;
+    margin-right: 10px;
 }

@@ -28,23 +28,22 @@ async function handleRequest(_request, _response) {
     if (_request.url) {
         let url = Url.parse(_request.url, true);
         let pathname = url.pathname;
-        if (pathname == "/addUrl") {
+        if (pathname == "/urlHin") {
             urlCollection.insertOne(url.query);
-            connectToDatabase(mongoUrl);
-            console.log(url.query); //eigentlich sinnlos, aber vorlage P3.4
+            connectToDatabase(mongoUrl); //Vorlage Aufgabe 3.4
         }
-        if (pathname == "/getUrl") {
+        if (pathname == "/urlHol") {
             _response.write(JSON.stringify(await (urlCollection.find().toArray())));
         }
-        else if (pathname == "/removeUrl") {
+        else if (pathname == "/urlEntf") {
             urlCollection.deleteOne(url.query);
-            connectToDatabase(mongoUrl); //eigentlich sinnlos, aber vorlage P3.4
+            connectToDatabase(mongoUrl); //Vorlage Aufgabe 3.4
         }
-        if (pathname == "/addScore") {
+        if (pathname == "/zeitHin") {
             timeCollection.insertOne(url.query);
-            connectToDatabase(mongoUrl); //eigentlich sinnlos, aber vorlage P3.4
+            connectToDatabase(mongoUrl); //Vorlage Aufgabe 3.4
         }
-        if (pathname == "/getScore") {
+        if (pathname == "/zeitHol") {
             _response.write(JSON.stringify(await (timeCollection.find().toArray())));
         }
     }

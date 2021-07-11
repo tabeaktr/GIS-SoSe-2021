@@ -1,15 +1,15 @@
 "use strict";
 let timer;
-async function makeCards() {
-    let response = await fetch("https://tabea-ketterer.herokuapp.com/getUrl");
-    let listeUrl = await response.json();
+async function kartenErst() {
+    let response = await fetch("https://tabea-ketterer.herokuapp.com/urlHol"); //holt URLs von Mongo
+    let listeUrl = await response.json(); //URLs als json-Datei
     let dupListeUrl = listeUrl;
     listeUrl = listeUrl.concat(dupListeUrl); //langes array mit jedem der 8 Bilder aus der Datenbank doppelt
-    //shuffle(listeUrl); //FIX SHUFFLE ACTIVE
-    fillBoard(listeUrl);
+    shuffle(listeUrl);
+    flaecheFuellen(listeUrl);
     timer = setInterval(setTime, 1000);
 }
-makeCards();
+kartenErst();
 //Knuth Shuffle Algorithmus (https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -23,26 +23,24 @@ function shuffle(array) {
     }
     return array;
 }
-//tabelle füllen
-function fillBoard(array) {
+//Tabelle füllen
+function flaecheFuellen(array) {
     const cells = Array.from(document.querySelectorAll("td")); //Array aus NodeListe erstellen
     for (let index = 0; index < array.length; index++) {
-        cells[index].innerHTML = "<img class='verdeckt' src='images/background.jpg'></img>"; //" + array[index].url.toString() + "
-        cells[index].addEventListener("click", () => { karteKlicken(cells[index], array[index].url.toString()); }); //FIXME
+        cells[index].innerHTML = "<img class='verdeckt' src='images/Cover.png'></img>"; //" + array[index].url.toString() + "
+        cells[index].addEventListener("click", () => { karteKlicken(cells[index], array[index].url.toString()); });
     }
 }
 let ersteKarte;
-let flip = false;
+let gedreht = false;
 let gefundenePaare = [""];
 function karteKlicken(_td, _url) {
-    if (ersteKarte == _td || (gefundenePaare.indexOf(_td.innerHTML) != -1) || flip == true) {
+    if (ersteKarte == _td || (gefundenePaare.indexOf(_td.innerHTML) != -1) || gedreht == true) {
         return;
     }
     if ((ersteKarte == undefined) || (ersteKarte == null)) {
         ersteKarte = _td;
         _td.innerHTML = "<img class='karten' src='" + _url + "'></img>";
-        console.log(ersteKarte);
-        console.log(ersteKarte == undefined); //false
     }
     else {
         _td.innerHTML = "<img class='karten' src='" + _url + "'></img>";
@@ -52,11 +50,11 @@ function karteKlicken(_td, _url) {
             ersteKarte = null;
         }
         else {
-            flip = true;
+            gedreht = true;
             setTimeout(() => {
-                _td.innerHTML = "<img class='verdeckt' src='images/background.jpg'></img>";
+                _td.innerHTML = "<img class='verdeckt' src='images/Cover.png'></img>";
                 ersteKarte.innerHTML = _td.innerHTML;
-                flip = false;
+                gedreht = false;
                 ersteKarte = null;
             }, 1000);
         }
@@ -75,12 +73,12 @@ function spielBeenden() {
     punkteForm.hidden = false;
     scoreForm.addEventListener("submit", (e) => {
         e.preventDefault(); //Seite lädt nicht neu
-        fetch("https://tabea-ketterer.herokuapp.com/addScore?name=" + encodeURI(document.getElementById("nameSpieler").value) + "&time=" + encodeURI(document.getElementById("minutes").innerHTML) + ":" + encodeURI(document.getElementById("seconds").innerHTML));
+        fetch("https://tabea-ketterer.herokuapp.com/zeitHin?name=" + encodeURI(document.getElementById("nameSpieler").value) + "&time=" + encodeURI(document.getElementById("minutes").innerHTML) + ":" + encodeURI(document.getElementById("seconds").innerHTML));
         scoreForm.reset();
     });
 }
 function pad(_val) {
-    let valString = _val + "";
+    let valString = _val.toString() + "";
     if (valString.length < 2) {
         return "0" + valString;
     }
@@ -93,8 +91,4 @@ function setTime() {
     document.getElementById("seconds").innerHTML = pad(totalSeconds % 60);
     document.getElementById("minutes").innerHTML = pad(Math.floor(totalSeconds / 60));
 }
-// function timer(): void {
-//     sekunden++;
-//     timerHTML.innerHTML = "Zeit: " + Math.floor(sekunden / 60) + " : " + (sekunden % 60);
-// }
 //# sourceMappingURL=script.js.map

@@ -2,10 +2,9 @@
 let highscoresDiv = document.getElementById("scoreboard");
 highscores(highscoresDiv);
 async function highscores(_flaeche) {
-    let scores = await fetch("https://tabea-ketterer.herokuapp.com/getScore");
+    let scores = await fetch("https://tabea-ketterer.herokuapp.com/zeitHol");
     let scoresListe = await scores.json();
     scoresListe.sort(sortByProperty("time"));
-    console.log(scoresListe);
     for (let i = 0; i <= scoresListe.length - 1; i++) {
         let scoreDiv = document.createElement("div");
         scoreDiv.innerHTML = scoresListe[i].name + " " + scoresListe[i].time;
