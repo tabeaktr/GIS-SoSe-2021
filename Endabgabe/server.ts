@@ -28,7 +28,7 @@ async function connectToDatabase(_url: string): Promise<void> {
 
     urlCollection = mongoClient.db("Test").collection("URL");
     timeCollection = mongoClient.db("Test").collection("Times");
-    console.log("hi");
+    console.log("Gleich soweit!");
 }
 
 async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {

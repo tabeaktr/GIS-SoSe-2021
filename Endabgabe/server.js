@@ -20,7 +20,7 @@ async function connectToDatabase(_url) {
     await mongoClient.connect();
     urlCollection = mongoClient.db("Test").collection("URL");
     timeCollection = mongoClient.db("Test").collection("Times");
-    console.log("hi");
+    console.log("Gleich soweit!");
 }
 async function handleRequest(_request, _response) {
     _response.setHeader("content-type", "text/html; charset=utf-8");
