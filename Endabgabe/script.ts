@@ -17,12 +17,12 @@
 
 async function makeCards(): Promise<void> {
     let response: Response = await fetch("https://tabea-ketterer.herokuapp.com/getUrl");
-    let listOfUrl = await response.json();
-    let dupListOfUrl = listOfUrl;
-    listOfUrl = listOfUrl.concat(dupListOfUrl); //langes array mit jedem der 8 Bilder aus der Datenbank doppelt
-    shuffle(listOfUrl);
-    fillBoard(listOfUrl);
-    timer();
+    let listeUrl = await response.json();
+    let dupListeUrl = listeUrl;
+    listeUrl = listeUrl.concat(dupListeUrl); //langes array mit jedem der 8 Bilder aus der Datenbank doppelt
+    //shuffle(listeUrl);
+    fillBoard(listeUrl);
+    //timer();
 }
 
 makeCards();
@@ -46,49 +46,66 @@ function shuffle(array: any): [] {
     return array;
 }
 
-const cells = document.querySelectorAll("td");
+
+
 //tabelle füllen
 function fillBoard(array: any) {
+    const cells = Array.from(document.querySelectorAll("td")); //Array aus NodeListe erstellen
 
     for (let index: number = 0; index < array.length; index++) {
+        cells[index].innerHTML = "<img class='verdeckt' src='images/background.jpg'></img>"; //" + array[index].url.toString() + "
 
-        cells[index].innerHTML = "<img class='verdeckt' src='" + "./images/background.jpg" + "'></img>"; //" + array[index].url.toString() + "
-        console.log(cells[index].innerHTML);
         cells[index].addEventListener("click", () => { karteKlicken(cells[index], array[index].url.toString()); }); //FIXME
     }
 }
 
 let ersteKarte: HTMLTableDataCellElement;
-let spielScore: number;
+let flip: boolean = false;
+let gefundenePaare: string[] = [""];
 
 function karteKlicken(_td: HTMLTableDataCellElement, _url: string) {
-    _td.className = "karten";
-
-    if (ersteKarte == null) {
+    if (ersteKarte == _td || (gefundenePaare.indexOf(_td.innerHTML) != -1) || flip == true) {
+        return;
+    }
+    if ((ersteKarte == undefined) || (ersteKarte == null)) {
         ersteKarte = _td;
-        _td.innerHTML = "<img class='' src='" + _url + "'></img>";
+        _td.innerHTML = "<img class='karten' src='" + _url + "'></img>";
+        console.log(ersteKarte);
+        console.log(ersteKarte == undefined); //false
     } else {
-        if (_td == ersteKarte) {
-            _td.removeEventListener("click", () => { karteKlicken(ersteKarte, _url); });
-            spielScore++;
+        _td.innerHTML = "<img class='karten' src='" + _url + "'></img>";
+        if (_td.innerHTML == ersteKarte.innerHTML) {
+            gefundenePaare.push(_td.innerHTML);
+            console.log(gefundenePaare.length); //+1 pro match
+            ersteKarte = null;
+        } else {
+            flip = true;
+            setTimeout(() => {
+                _td.innerHTML = "<img class='verdeckt' src='images/background.jpg'></img>";
+                ersteKarte.innerHTML = _td.innerHTML;
+                flip = false;
+                ersteKarte = null;
+            }, 1000);
         }
     }
 
-    ersteKarte = null;
-    if (spielScore == 8) {
+
+    if (gefundenePaare.length == 9) {
         spielBeenden();
     }
 }
 
-const scoreForm: HTMLElement = document.getElementById("punkte");
+
 
 function spielBeenden(): void {
+    const scoreForm: HTMLElement = document.getElementById("punkte");
+    console.log(scoreForm);
     scoreForm.hidden = false;
 }
 
-let sekunden: number = 0;
-let timerHTML: HTMLElement = document.getElementById("zeit");
-function timer(): void {
-    sekunden++;
-    timerHTML.innerHTML = "Zeit: " + Math.floor(sekunden / 60) + " : " + (sekunden % 60);
-}
+// let sekunden: number = 0;
+// let timerHTML: HTMLElement = document.getElementById("zeit");
+// function timer(): void {
+//     sekunden++;
+//     timerHTML.innerHTML = "Zeit: " + Math.floor(sekunden / 60) + " : " + (sekunden % 60);
+// }

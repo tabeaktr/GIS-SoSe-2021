@@ -65,7 +65,12 @@ button {
     width: 140px;
     height: 180px;
     margin: 5px;
-    background: blue;
+}
+.verdeckt:hover{
+    border: 2px solid black;
+    box-shadow: inset 0px, 0px, 0px, 5px black;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
 .aufgedeckt {
